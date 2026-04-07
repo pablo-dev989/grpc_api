@@ -1,0 +1,30 @@
+go get google.golang.org/grpc
+go get go.mongodb.org/mongo-driver/bson
+go get go.mongodb.org/mongo-driver/mongo/options
+go get github.com/envoyproxy/protoc-gen-validate
+go get github.com/joho/godotenv
+go get github.com/go-mail/mail/v2
+go get github.com/golang-jwt/jwt/v5
+
+---------------USE THIS BEFORE APPLYING VALIDATION
+protoc -I=proto --go_out=. --go-grpc_out=. proto/main.proto proto/students.proto proto/execs.proto 
+
+
+---------------USE THIS AFTER APPLYING VALIDATION
+protoc -I=proto --go_out=. --go-grpc_out=. --validate_out="lang=go:."  proto/main.proto proto/students.proto proto/execs.proto  
+
+
+--------------- BUILDING API BINARY
+GOOS=darwin GOARCH=amd64 go build -o macOS_api_x86-64.exe server.go (Not if you are working on macOS amd64 system)
+GOOS=windows GOARCH=amd64 go build -o windows_binary/binary-windows_x86-64 server.go (Not if you are working on macOS amd64 system)
+
+go build -o cmd/grpcapi/binaries/grpc_api_amd64 cmd/grpcapi/server.go 
+go build -o cmd/grpcapi/binaries/grpc_api_amd64_NON_TLS cmd/grpcapi/server.go 
+garble build -o cmd/grpcapi/binaries/obfuscated_grpc_api_amd64 cmd/grpcapi/server.go
+garble build -o cmd/grpcapi/binaries/obfuscated_grpc_api_amd64_NON_TLS cmd/grpcapi/server.go   
+
+--------------- RUNNING API BINARY
+./grpc_api_amd64_NON_TLS 
+./grpc_api_amd64_TLS 
+./obfuscated_grpc_api_amd64_NON_TLS   
+./obfuscated_grpc_api_amd64_TLS      

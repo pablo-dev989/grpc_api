@@ -1,0 +1,82 @@
+[
+    {
+        "first_name": "Alice",
+        "last_name": "Smith",
+        "email": "alice.smith@example.com",
+        "username": "alice.smith",
+        "password": "securepassword1", // password1
+        "role": "admin"
+    },
+    {
+        "first_name": "Bob",
+        "last_name": "Johnson",
+        "email": "bob.johnson@example.com",
+        "username": "bob.johnson",
+        "password": "securepassword2",
+        "role": "admin"
+    },
+    {
+        "first_name": "Charlie",
+        "last_name": "Brown",
+        "email": "charlie.brown@example.com",
+        "username": "charlie.brown",
+        "password": "securepassword3",
+        "role": "manager"
+    },
+    {
+        "first_name": "Diana",
+        "last_name": "White",
+        "email": "diana.white@example.com",
+        "username": "diana.white",
+        "password": "securepassword4",
+        "role": "manager"
+    },
+    {
+        "first_name": "Edward",
+        "last_name": "Taylor",
+        "email": "edward.taylor@example.com",
+        "username": "edward.taylor",
+        "password": "securepassword5",
+        "role": "manager"
+    },
+    {
+        "first_name": "Fiona",
+        "last_name": "Martin",
+        "email": "fiona.martin@example.com",
+        "username": "fiona.martin",
+        "password": "securepassword6",
+        "role": "exec"
+    },
+    {
+        "first_name": "George",
+        "last_name": "Anderson",
+        "email": "george.anderson@example.com",
+        "username": "george.anderson",
+        "password": "securepassword7",
+        "role": "exec"
+    },
+    {
+        "first_name": "Hannah",
+        "last_name": "Thomas",
+        "email": "hannah.thomas@example.com",
+        "username": "hannah.thomas",
+        "password": "securepassword8",
+        "role": "exec"
+    },
+    {
+        "first_name": "Ian",
+        "last_name": "Moore",
+        "email": "ian.moore@example.com",
+        "username": "ian.moore",
+        "password": "securepassword9",
+        "role": "exec"
+    },
+    {
+        "first_name": "Jasmine",
+        "last_name": "Jackson",
+        "email": "jasmine.jackson@example.com",
+        "username": "jasmine.jackson",
+        "password": "securepassword10",
+        "role": "exec"
+    }
+]

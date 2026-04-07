@@ -1,0 +1,115 @@
+syntax = "proto3";
+
+import "students.proto";
+
+package main;
+
+option go_package = "/proto/gen;grpcapipb";
+
+// Servicio para Mantenimiento de Execs
+service ExecsService {
+
+    // Retrieve the Execs data
+    rpc GetExecs (GetExecsRequest) returns (Execs);
+    // Add new Exec data
+    rpc AddExecs (Execs) returns (Execs);
+    // Update Execs data 
+    rpc UpdateExecs (Execs) returns (Execs);
+    // Delete Execs data
+    rpc DeleteExecs (ExecIds) returns (DeleteExecsConfirmation);  
+    // Login 
+    rpc Login (ExecLoginRequest) returns (ExecLoginResponse);
+    // Logout
+    rpc Logout (EmptyRequest) returns (ExecLogoutResponse); // pr empty response
+    // Update password
+    rpc UpdatePassword (UpdatePasswordRequest) returns (UpdatePasswordResponse);
+    // Reset Password
+    rpc ResetPassword (ResetPasswordRequest) returns (Confirmation);
+    // Forgot Password
+    rpc ForgotPassword (ForgotPasswordRequest) returns (ForgotPasswordResponse);
+    // 
+    rpc DeactivateUser (ExecIds) returns (Confirmation);
+}
+
+message ForgotPasswordResponse {
+    bool confirmation = 1;
+    string message = 2;
+}
+
+message ForgotPasswordRequest {
+    string email = 1;
+}
+
+message Confirmation {
+    bool confirmation = 1;
+}
+
+message ResetPasswordRequest {
+    string reset_code = 1;
+    string new_password = 2;
+    string confirm_password = 3;
+}
+
+message UpdatePasswordResponse {
+    bool password_update = 1;
+    string token = 2;
+}
+
+message UpdatePasswordRequest {
+    string id = 1;
+    string current_password = 2;
+    string new_password = 3;
+}
+
+message ExecLogoutResponse {
+    bool loged_out = 1;
+}
+
+message EmptyRequest {}
+
+message ExecLoginResponse {
+    bool status = 1;
+    string token = 2;
+}
+
+message ExecLoginRequest {
+    string username = 1;
+    string password = 2;
+}
+
+message DeleteExecsConfirmation {
+    string status = 1;
+    repeated string deleted_ids = 2;
+}
+
+message ExecIds {
+    repeated string ids = 1;
+}
+
+message GetExecsRequest {
+    Exec exec = 1;
+    repeated SortField sort_by = 2;
+}
+
+message Exec {
+    string id = 1;
+    string first_name = 2;
+    string last_name = 3;
+    string email = 4;
+    string username = 5;
+    string password = 6;
+    string password_changed_at = 7;
+    string user_created_at = 8;
+    string password_reset_token = 9;
+    string password_token_expires = 10;
+    string role = 11;
+    bool inactive_status = 12;
+
+
+}
+
+message Execs {
+    repeated Exec execs = 1;
+}
+
+

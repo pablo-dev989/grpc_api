@@ -1,0 +1,4 @@
+go install github.com/mailhog/MailHog@latest 
+~/go/bin/MailHog 
+
+UI for incoming emails: http://localhost:8025/

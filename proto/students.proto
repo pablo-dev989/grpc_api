@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+package main;
+
+option go_package = "/proto/gen;grpcapipb";
+
+// Servicio para Mantenimiento de Students
+service StudentsService {
+
+    // Retrieve the Students data
+    rpc GetStudents (GetStudentsRequest) returns (Students);
+    // Add new Student data
+    rpc AddStudents (Students) returns (Students);
+    // Update Students data 
+    rpc UpdateStudents (Students) returns (Students);
+    // Delete Students data
+    rpc DeleteStudents (StudentIds) returns (DeleteStudentsConfirmation);  
+}
+
+message DeleteStudentsConfirmation {
+    string status = 1;
+    repeated string deleted_ids = 2;
+}
+
+
+
+message StudentIds {
+    repeated string ids = 1;
+}
+
+message GetStudentsRequest {
+    Student student = 1;
+    repeated SortField sort_by = 2;
+    uint32 page_number = 3;
+    uint32 page_size = 4;
+}
+
+message SortField {
+    string field = 1;
+    Order order = 2;
+}
+
+enum Order {
+    ASC = 0;
+    DESC = 1;
+}
+
+message Student {
+    string id = 1;
+    string first_name = 2;
+    string last_name = 3;
+    string email = 4;
+    string class = 5;
+}
+
+message Students {
+    repeated Student students = 1;
+}
+
+
