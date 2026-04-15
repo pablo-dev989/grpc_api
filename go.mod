@@ -12,6 +12,7 @@ require (
 )
 
 require (
+	github.com/envoyproxy/protoc-gen-validate v1.3.3 // indirect
 	github.com/go-mail/mail v2.3.1+incompatible // indirect
 	github.com/golang/snappy v0.0.4 // indirect
 	github.com/klauspost/compress v1.16.7 // indirect

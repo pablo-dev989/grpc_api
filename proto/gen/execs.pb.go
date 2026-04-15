@@ -7,6 +7,7 @@
 package grpcapipb
 
 import (
+	_ "github.com/envoyproxy/protoc-gen-validate/validate"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -845,7 +846,7 @@ var File_execs_proto protoreflect.FileDescriptor
 
 const file_execs_proto_rawDesc = "" +
 	"\n" +
-	"\vexecs.proto\x12\x04main\x1a\x0estudents.proto\"V\n" +
+	"\vexecs.proto\x12\x04main\x1a\x17validate/validate.proto\x1a\x0estudents.proto\"V\n" +
 	"\x16ForgotPasswordResponse\x12\"\n" +
 	"\fconfirmation\x18\x01 \x01(\bR\fconfirmation\x12\x18\n" +
 	"\amessage\x18\x02 \x01(\tR\amessage\"-\n" +
